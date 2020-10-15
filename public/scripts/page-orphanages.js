@@ -4,9 +4,9 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
 const icon = L.icon({
     iconUrl: "./public/images/map-marker.svg",
-    iconSize: [58, 68],
+    iconSize: [60, 70],
     iconAnchor: [29, 68],
-    popupAnchor: [170, 2]
+    popupAnchor: [170, 6]
 })
 
 const popup = L.popup({
