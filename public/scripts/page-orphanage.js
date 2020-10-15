@@ -31,8 +31,10 @@ function selectImage(event) {
 
   const image = button.children[0]
   const imageContainer = document.querySelector(".orphanage-details > img")
+  const imageContainerCopy = imageContainer.src
 
   imageContainer.src = image.src
+  image.src = imageContainerCopy
 
   button.classList.add("active")
 }
