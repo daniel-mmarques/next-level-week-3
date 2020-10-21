@@ -6,18 +6,21 @@ const options = {
   zoomControl: false
 }
 
-const map = L.map("mapid", options).setView([-26.9083339, -49.0798445], 16);
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
+const map = L.map("mapid", options).setView([lat, lng], 16);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
 const icon = L.icon({
-    iconUrl: "./public/images/map-marker.svg",
+    iconUrl: "/images/map-marker.svg",
     iconSize: [60, 70],
     iconAnchor: [29, 68],
     popupAnchor: [170, 6]
 })
 
-L.marker([-26.9083339, -49.0798445], {icon}).addTo(map);
+L.marker([lat, lng], {icon}).addTo(map);
 
 function selectImage(event) {
   const button = event.currentTarget
